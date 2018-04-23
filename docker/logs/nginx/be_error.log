@@ -1,0 +1,2 @@
+2018/04/19 09:25:56 [error] 7#7: *4 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.17.0.1, server: be.docker, request: "GET /index HTTP/1.1", upstream: "fastcgi://172.17.0.2:9000", host: "be.docker:8080"
+2018/04/19 09:26:07 [error] 7#7: *4 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 172.17.0.1, server: be.docker, request: "GET / HTTP/1.1", upstream: "fastcgi://172.17.0.2:9000", host: "be.docker:8080"
