@@ -1,0 +1,32 @@
+version: '2.1'
+services:
+  db:
+    build: ./docker/debianDB
+    environment:
+      MYSQL_DATABASE: be_db
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+    mem_limit: 128M
+    networks:
+      - appnet
+    ports:
+      - 3307:3306
+    volumes:
+      - ./docker/debianDB/my.cnf:/etc/mysql/my.cnf
+
+  web:
+    build: ./docker/webApache
+    volumes:
+      - ./be:/var/www/be:cached
+      - ./docker/logs/be:/var/www/be/var/logs:cached
+    ports:
+      - 8080:80
+    links:
+      - db
+    networks:
+        - appnet
+
+networks:
+    appnet:
+        driver: "bridge"

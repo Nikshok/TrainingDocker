@@ -13,7 +13,7 @@ class DefaultController extends Controller
     /**
      * @param ProductRepository $productRepository
      * @return Response
-     * @Route("/index")
+     * @Route("/")
      */
     public function index(ProductRepository $productRepository)
     {
@@ -27,6 +27,6 @@ class DefaultController extends Controller
 
         $product = $productRepository->find(1);
 
-        return new Response($product->getName());
+        return new Response($product->getName().'<br>It works!');
     }
 }
