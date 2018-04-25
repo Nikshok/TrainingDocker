@@ -31,7 +31,7 @@ services:
     ports:
       - 9002:9000
     volumes:
-      - ./be:/var/www/be:cached
+      - ./be:/var/www/be
       - ./docker/logs/be:/var/www/be/var/logs:cached
     networks:
         - appnet

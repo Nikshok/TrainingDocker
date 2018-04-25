@@ -17,3 +17,6 @@ Run 'docker-compose -f prod-docker-compose.yml up' for up app.
 
 
 Run 'make install-prod' for install dependencies and init database.
+
+For elastic db
+mysql -uroot -p -h127.0.0.1 -P 3307 be_db  < ./docker/elastic/mysql.sql
