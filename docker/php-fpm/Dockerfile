@@ -16,5 +16,6 @@ RUN apt-get install -y --no-install-recommends \
 RUN docker-php-ext-install mysqli pdo pdo_mysql zip curl
 
 RUN curl -k -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+COPY php.ini /usr/local/etc/php/conf.d/
 
 WORKDIR "/var/www/be"
